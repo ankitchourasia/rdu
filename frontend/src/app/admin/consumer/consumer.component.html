@@ -1,0 +1,52 @@
+<h2>Add Consumer </h2>
+<hr>
+<br>
+      <form (ngSubmit)="addConsumer()" class="form-horizontal">
+        <div class="form-group row">
+					<label for="substationName" class="col-md-3 col-form-label">Device Name
+					</label>
+          <div class="col-md-9">
+        <select class="form-control" name="deviceList" required [(ngModel)]="consumer.device">
+							<option value="" disabled selected hidden>Select Device Name</option>
+							<option *ngFor="let device of devices">{{device.deviceName}}</option>
+
+				</select>
+      </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label">Account No:</label>
+          <div class="col-md-9">
+          <input type="text" [(ngModel)]="consumer.accountNumber" name="accountNumber" class="form-control" id="feederName" placeholder="Account Number">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">Name:</label>
+        <div class="col-md-9">
+          <input type="text" [(ngModel)]="consumer.name" class="form-control" name="poleNumber" id="poleNumber" placeholder="Pole Number">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">Address:</label>
+        <div class="col-md-9">
+          <input type="text" [(ngModel)]="consumer.address" name="installtionDate" class="form-control" id="installtionDate" placeholder="Installtion Date">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">Pole Number:</label>
+        <div class="col-md-9">
+          <input type="text" [(ngModel)]="consumer.poleNumber" class="form-control" name="zoneName" id="zoneName" placeholder="Zone Name">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">Terminal:</label>
+        <div class="col-md-9">
+          <input type="number" [(ngModel)]="consumer.terminalNumber" name="simNo" class="form-control" id="simNo" placeholder="Sim No">
+        </div>
+      </div>
+      <br>
+      <div class="row justify-content-center">
+        <button type="reset" class="btn btn-warning"> Clear</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+      </form>

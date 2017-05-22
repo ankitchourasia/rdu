@@ -1,0 +1,58 @@
+<nav class="navbar navbar-dark bg-inverse navbar-full">
+  <div class="container-fluid">
+    <div>
+      <a class="btn btn-primary"  routerLink="/admin" >
+        Home
+      </a>
+      <a class="btn btn-primary" >
+        RDU
+      </a>
+      <a class="btn btn-primary" routerLink="">
+        Logout
+      </a>
+    </div>
+  </div>
+</nav>
+<section id="admin-main-section">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 sidebar">
+						<div class="card text-xs-center">
+							<div class="card-header card-header-inverse"
+								data-toggle="collapse" data-target="#substationMenu"
+								style="background-color: #333; color: #FFFFFF; border-color: #333; cursor: pointer; cursor: hand;"
+								aria-expanded="false" aria-controls="substationMenu">
+								Remote Disconnection Device</div>
+							<ul class="list-group list-group-flush collapse"
+								id="substationMenu">
+								<li class="list-group-item"><a routerLink="addDevice"><span
+										class="fa fa-plus"></span>&nbsp;Add</a></li>
+								<li class="list-group-item"><a routerLink="viewDetails"><span
+										class="fa fa-pencil"></span>&nbsp;View Details</a></li>
+							</ul>
+						</div>
+						<div class="card text-xs-center">
+							<div class="card-header card-header-inverse"
+								data-toggle="collapse" data-target="#feederMenu"
+								aria-expanded="false" aria-controls="feederMenu"
+								style="background-color: #333; color: #FFFFFF; border-color: #333; cursor: pointer; cursor: hand;">
+								Consumers</div>
+							<ul class="list-group list-group-flush collapse" id="feederMenu">
+								<li class="list-group-item"><a routerLink="addConsumer"><span
+										class="fa fa-plus"></span>&nbsp;Add</a></li>
+							</ul>
+						</div>
+          </div>
+
+					<!-- DIV to hold all the template pages -->
+					<div class="col-md-10" >
+
+            <div class="row justify-content-center">
+               <router-outlet></router-outlet>
+
+            </div>
+
+          </div>
+				</div>
+			</div>
+	</section>

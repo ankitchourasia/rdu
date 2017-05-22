@@ -1,0 +1,48 @@
+<h2>Add Remote Disconnection Device </h2>
+<hr>
+<br>
+      <form (ngSubmit)="addDevice()" class="form-horizontal">
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label">Device Name:</label>
+          <div class="col-md-9">
+            <input type="text" [(ngModel)]="device.deviceName" class="form-control" name="deviceName" id="deviceName" placeholder="Device Name" required #deviceName="ngModel">
+        </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label">Feeder Name:</label>
+          <div class="col-md-9">
+          <input type="text" [(ngModel)]="device.feederName" name="feederName" class="form-control" id="feederName" placeholder="Feeder Name">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">Pole Number:</label>
+        <div class="col-md-9">
+          <input type="text" [(ngModel)]="device.poleNumber" class="form-control" name="poleNumber" id="poleNumber" placeholder="Pole Number">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">Installation Date:</label>
+        <div class="col-md-9">
+          <input type="date" [(ngModel)]="device.installationDate" name="installationDate" class="form-control" id="installationDate" placeholder="Installation Date">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">Zone Name:</label>
+        <div class="col-md-9">
+          <input type="text" [(ngModel)]="device.zoneName" class="form-control" name="zoneName" id="zoneName" placeholder="Zone Name">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">SIM No:</label>
+        <div class="col-md-9">
+          <input type="number" [(ngModel)]="device.simNo" name="simNo" class="form-control" id="simNo" placeholder="Sim No">
+        </div>
+      </div>
+      <br>
+      <div class="row justify-content-center">
+        <button type="reset" class="btn btn-warning"> Clear</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+      </form>

@@ -1,0 +1,39 @@
+<div class="container" >
+<div class="row">
+  <div>
+    <h2> Consumer View Details </h2>
+  </div>
+</div>
+<div class="row">
+  <div class="form-group">
+  <label class="control-label">Device Name:</label>
+  <select class="form-control" name="selectedDevice" required [(ngModel)]="selectedDevice" (change)="deviceChanged()">
+          <option value="" disabled selected hidden>Select Device Name</option>
+          <option [ngValue]="device" *ngFor="let device of devices">{{device.deviceName}}</option>
+  </select>
+</div>
+</div>
+<div class="row">
+<table class="table table-bordered table-hover">
+<tr>
+  <th>Device Name</th>
+  <th>Feeder Name</th>
+  <th>Consumer Name</th>
+  <th>Account No</th>
+  <th>Status</th>
+</tr>
+<tr *ngFor="let consumer of currentDevice.consumers" >
+  <td>{{consumer.name}}</td>
+  <td>{{currentDevice.feederName}}</td>
+  <td>{{consumer.name}}</td>
+  <td>{{consumer.accountNumber}}</td>
+  <td *ngIf="consumer.status==='0'">
+    <button class="btn btn-danger" [disabled]="currentDevice.status === 'N'" (click)="statusChanged(consumer)">OFF</button>
+  </td>
+  <td *ngIf="consumer.status==='1'">
+    <button class="btn btn-success" [disabled]="currentDevice.status === 'N'" (click)="statusChanged(consumer)">ON</button>
+  </td>
+</tr>
+</table>
+</div>
+</div>

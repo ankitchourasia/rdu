@@ -1,0 +1,9 @@
+com\rdu\repositories\UserRepository.class
+com\rdu\beans\DeviceData.class
+com\rdu\beans\Response.class
+com\rdu\RduApplication.class
+com\rdu\beans\Consumer.class
+com\rdu\beans\Device.class
+com\rdu\services\UserService.class
+com\rdu\controllers\LoginController.class
+com\rdu\beans\User.class
