@@ -16,11 +16,11 @@ public class Device {
     private int id;
     @Column(name="device_name")
     private String deviceName;
-    @Column(name="feeder_name")
+    @Column(name="name_of_feeder")
     private String feederName;
     @Column(name="pole_number")
     private String poleNumber;
-    @Column(name="installation_date")
+    @Column(name="date_of_installation")
     private String installationDate;
     @Column(name="zone_name")
     private String zoneName;

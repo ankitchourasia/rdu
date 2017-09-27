@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Created by lenovo on 05/08/2017.
  */
 @Entity
-@Table(name="response")
+@Table(name="tab_responce")
 public class Response {
 
     @Id

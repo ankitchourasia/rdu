@@ -8,10 +8,11 @@ import javax.persistence.*;
 @Entity
 @Table(name="device_data")
 public class DeviceData {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    /*@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name="id")
-    private int id;
+    private int id;*/
+    @Id
     @Column(name="device_name")
     private String deviceName;
     @Column(name="data_date")
@@ -25,13 +26,13 @@ public class DeviceData {
     @Column(name="data_time")
     private String dataTime;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+//    public int getId() {
+//        return id;
+//    }
+//
+//    public void setId(int id) {
+//        this.id = id;
+//    }
 
     public String getDataDate() {
         return dataDate;
@@ -108,7 +109,7 @@ public class DeviceData {
     @Override
     public String toString() {
         return "DeviceData{" +
-                "id=" + id +
+               /* "id=" + id +*/
                 ", deviceName='" + deviceName + '\'' +
                 ", dataDate='" + dataDate + '\'' +
                 ", t1='" + t1 + '\'' +

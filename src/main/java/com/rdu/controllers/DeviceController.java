@@ -9,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Base64;
@@ -95,10 +97,16 @@ public class DeviceController {
     }
 
 
-    @RequestMapping(value="response/{deviceName}",method = RequestMethod.GET)
+    @RequestMapping(value="/response/{deviceName}",method = RequestMethod.GET)
     public ResponseEntity<Device> getDeviceByName(@PathVariable String deviceName){
         System.out.println("inside get device By NAme "+deviceName);
-        String actualDeviceName = new String(Base64.getDecoder().decode(deviceName));
+        //String actualDeviceName = new String(Base64.getDecoder().decode(deviceName));
+        String actualDeviceName = null;
+        try {
+            actualDeviceName = URLDecoder.decode( deviceName, "UTF-8" );
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
         System.out.println(actualDeviceName);
         Device device = deviceService.findByDeviceName(actualDeviceName);
         ResponseEntity<Device> responseEntity = null;
